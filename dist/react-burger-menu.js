@@ -125,8 +125,10 @@ var _radium2 = _interopRequireDefault(_radium);
 var CrossIcon = (0, _radium2['default'])(_react2['default'].createClass({
         propTypes: {
             customIcon: _react2['default'].PropTypes.element,
-            styles: _react2['default'].PropTypes.object
+            styles: _react2['default'].PropTypes.object,
+            tabIndex: _react2['default'].PropTypes.number
         },
+        defaultProps: { tabIndex: 0 },
         getCrossStyle: function getCrossStyle(type) {
             return {
                 position: 'absolute',
@@ -199,7 +201,8 @@ var CrossIcon = (0, _radium2['default'])(_react2['default'].createClass({
                 ]
             }, icon, _react2['default'].createElement('button', {
                 onClick: this.props.onClick,
-                style: buttonStyle
+                style: buttonStyle,
+                tabIndex: this.props.tabIndex
             }, 'Close Menu'));
         }
     }));
@@ -273,6 +276,7 @@ var _CrossIcon2 = _interopRequireDefault(_CrossIcon);
 exports['default'] = function (styles) {
     return (0, _radium2['default'])(_react2['default'].createClass({
         propTypes: {
+            crossIconTabIndex: _react2['default'].PropTypes.number,
             customBurgerIcon: _react2['default'].PropTypes.oneOfType([
                 _react2['default'].PropTypes.element,
                 _react2['default'].PropTypes.oneOf([false])
@@ -448,7 +452,8 @@ exports['default'] = function (styles) {
             }))), _react2['default'].createElement('div', { style: this.getStyles('closeButton') }, _react2['default'].createElement(_CrossIcon2['default'], {
                 onClick: this.toggleMenu,
                 styles: this.props.styles,
-                customIcon: this.props.customCrossIcon ? this.props.customCrossIcon : null
+                customIcon: this.props.customCrossIcon ? this.props.customCrossIcon : null,
+                tabIndex: this.props.crossIconTabIndex
             }))), _react2['default'].createElement(_BurgerIcon2['default'], {
                 onClick: this.toggleMenu,
                 styles: this.props.styles,
