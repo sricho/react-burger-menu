@@ -8,11 +8,6 @@ const CrossIcon = Radium(React.createClass({
   propTypes: {
     customIcon: React.PropTypes.element,
     styles: React.PropTypes.object,
-		tabIndex: React.PropTypes.number,
-  },
-
-  defaultProps: {
-    tabIndex: 0,
   },
 
   getCrossStyle(type) {

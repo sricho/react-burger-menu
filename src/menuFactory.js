@@ -26,6 +26,10 @@ export default (styles) => {
       width: React.PropTypes.number
     },
 
+    defaultProps: {
+      crossIconTabIndex: 0,
+    },
+
     toggleMenu() {
       // Order important: handle wrappers before setting sidebar state.
       this.applyWrapperStyles();
