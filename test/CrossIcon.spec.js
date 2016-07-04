@@ -125,5 +125,19 @@ describe('CrossIcon component', () => {
       };
       expect(button.props.style).to.deep.equal(expected);
     });
+
+		it('has a default tab index', () => {
+			component = createShallowComponent(<CrossIcon />);
+			const button = component.props.children[1];
+			const expected = 0;
+			expect(button.props.tabIndex).to.equal(expected);
+		});
+
+		it('can set tab index', () => {
+			component = createShallowComponent(<CrossIcon tabIndex={3} />);
+			const button = component.props.children[1];
+			const expected = 3;
+			expect(button.props.tabIndex).to.equal(expected);
+		});
   });
 });

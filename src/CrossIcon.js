@@ -7,7 +7,12 @@ const CrossIcon = Radium(React.createClass({
 
   propTypes: {
     customIcon: React.PropTypes.element,
-    styles: React.PropTypes.object
+    styles: React.PropTypes.object,
+		tabIndex: React.PropTypes.number,
+  },
+
+  defaultProps: {
+    tabIndex: 0,
   },
 
   getCrossStyle(type) {
@@ -64,7 +69,7 @@ const CrossIcon = Radium(React.createClass({
     return (
       <div className="bm-cross-button" style={ [buttonWrapperStyle, this.props.styles.bmCrossButton] }>
         { icon }
-        <button onClick={ this.props.onClick } style={ buttonStyle }>Close Menu</button>
+        <button onClick={ this.props.onClick } style={ buttonStyle } tabIndex={ tabIndex }>Close Menu</button>
       </div>
     );
   }
